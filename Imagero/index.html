@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Image Processing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="siteName">ImagePro</div>
+    <h1>Advanced Image Processing</h1>
+    
+    <div id="container">
+        <div id="image-container">
+            <canvas id="imageCanvas"></canvas>
+            <canvas id="mirroredCanvas" style="display: none;"></canvas>
+        </div>
+
+        <div id="controls">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button id="flipHorizontalButton">Flip Horizontal</button>
+            <button id="flipVerticalButton">Flip Vertical</button>
+           
+            <button id="mirrorButton">Mirror Image</button>
+          
+            <button id="grayscaleButton">Grayscale Image</button>
+            <button id="blurButton">Blur Image</button>
+            <input type="range" id="blur-slider" min="0" max="10" step="1" value="0">
+            <button id="negativeButton">Negative Image</button>
+            <button id="saturationButton">Adjust Saturation</button>
+            <input type="range" id="saturation-slider" min="0" max="200" step="1" value="100">
+            <button id="cropButton">Crop Image</button>
+            <button id="contrastButton">Adjust Contrast</button>
+            <input type="range" id="contrast-slider" min="50" max="150" step="1" value="100">
+           
+           
+            <select id="cropSelection">
+                <option value="none">Select Crop Area</option>
+                <option value="top-left">Top Left</option>
+                <option value="top-right">Top Right</option>
+                <option value="bottom-left">Bottom Left</option>
+                <option value="bottom-right">Bottom Right</option>
+            </select>
+            <button id="downloadButton">Download Image</button>
+            <button id="resetButton">Reset Image</button>
+            <button id="classifyButton">Classify Image</button>
+            <button id="detectObjectsButton">Detect Objects</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="script.js"></script>
+</body>
+</html>
